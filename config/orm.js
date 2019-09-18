@@ -66,7 +66,7 @@ let orm = {
         let queryString = "UPDATE " + tableInput;
 
         queryString += " SET ";
-        queryString += objColVals(objColVals);
+        queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
         console.log(queryString);
