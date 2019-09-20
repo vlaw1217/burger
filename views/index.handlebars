@@ -1,1 +1,116 @@
-<h1> Burgers </h1>
+<!-- Header image and title-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <img src="../assets/img/catNburger.jpg" alt="Cat Burger" style="width: 200px; height:200px;">
+        <h1> Eat da Burgers </h1>
+    </div>
+</div>
+
+<div class="container text-center">
+    <class="row">
+        <ul class="list-group">
+            {{#each burger}}
+            {{#unless this.devoured}}
+            <li class="list-group-item">
+                {{this.id}}.{{this.burger_name}}
+                <form action="burger/updateOne/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button type="submit" class="btn btn-default"> Devour it </button>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+        <!--<div class="btn-group" role="group" aria-label="">
+           {{#each burger}}
+            <button type="button" class="btn btn-primary">
+               {{this.burger_name}} 
+            </button>         
+            {{/each}}
+        </div>-->
+
+        
+<!--Insert burger box -->
+<div class="row">
+<div class="col-md-12">
+    <input id="inputBox" type="text" name="burgerName" value="">
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <form class="create-form">
+                <div class="form-group">
+                    <input type="text" id="burgerName" name="name">
+                </div>
+        </div>
+
+        <div class="col-md-4">
+            <button id="devBtn" type="button">Devoured</button>
+        </div>
+
+    </div>
+
+    <!-- Box title 
+<div class="container text-center">
+    <div class ="col-md-12">
+<p>Please input your burger</p>
+</div>
+
+< Insert burger box 
+<div class="col-md-12">
+<input id ="inputBox" type="text" name="burgerName" value="">
+</div>-->
+
+    <!-- Submit button 
+<div class="col-md-12">
+<button id = "subBtn" type="button">Submit</button>
+</div>
+</div>-->
+
+    <!-- Left box show the input 
+<ul class="list-group">
+    {{#each burger}}
+    {{#if this.devoured}}
+    <li class="list-group-item">
+        {{this.burger_name}}
+        </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+<! Burger has been choose
+<div class="container text-center">
+<div class="row">
+<div class="col-md-4">
+<form class="create-form">
+    <div class="form-group">
+        <input type="text" id="burgerName" name="name">
+    </div>
+</div>-->
+    <!-- Devoured button 
+<div class="col-md-4">
+<button id="devBtn" type="button">Devoured</button>
+</div>
+
+<! Right box to confirm devouring 
+<div class="col-md-4">
+<div id="rightBox">
+<form class="create-form">
+    <div class="form-group">
+        <input type="text" id="burgerName" name="name">
+    </div>
+</div>
+</div>-->
+
+
+
+
+
+</div>
+</div>
