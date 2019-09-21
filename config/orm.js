@@ -23,9 +23,6 @@ function objToSql(ob) {
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
-            //arr.push(key + "=" + value);
             arr.push(value + "=" + 1);
         }
     }
@@ -47,11 +44,6 @@ let orm = {
     },
 
     insertOne: function (tableInput, cols, vals, callback) {
-
-        //console.log("here:");
-        //console.log(printQuestionMarks(vals.length));
-        //console.log("end");
-
 
         let queryString = "INSERT INTO " + tableInput;
         queryString += " (";

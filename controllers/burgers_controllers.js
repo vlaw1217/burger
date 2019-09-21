@@ -31,7 +31,7 @@ router.post("/burger/insertOne", function (req, res) {
 });
 
 // PUT request to grab burger, make changes and save in the database
-//router.put("/burger/updateOne/:id", function (req, res) {
+
 router.post("/burger/updateOne", function (req, res) {
     console.log(req.body.burgerid)
     
@@ -47,16 +47,6 @@ router.post("/burger/updateOne", function (req, res) {
 
         });
 
-
-
-    /*console.log("condition", condition);
-    burger.updateOne(function (result) {
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
-    });*/
 });
 // Export routes for server.js to use.
 module.exports = router;
