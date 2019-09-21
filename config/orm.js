@@ -11,6 +11,7 @@ function printQuestionMarks(num) {
 }
 //Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
+
     let arr = [];
 
     // Loop through the keys and push the key/value as a string int arr
@@ -24,7 +25,8 @@ function objToSql(ob) {
             }
             // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
             // e.g. {sleepy: true} => ["sleepy=true"]
-            arr.push(key + "=" + value);
+            //arr.push(key + "=" + value);
+            arr.push(value + "=" + 1);
         }
     }
 
@@ -45,6 +47,12 @@ let orm = {
     },
 
     insertOne: function (tableInput, cols, vals, callback) {
+
+        //console.log("here:");
+        //console.log(printQuestionMarks(vals.length));
+        //console.log("end");
+
+
         let queryString = "INSERT INTO " + tableInput;
         queryString += " (";
         queryString += cols.toString();

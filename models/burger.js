@@ -14,8 +14,10 @@ let burger = {
         });
     },
 
-    updateOne: function (objColVals, condition, callback) {
+    updateOne: function ( objColVals,condition, callback) {
         orm.updateOne("burger", objColVals, condition, function (res) {
+        //updateOne: function (objColVals, condition, callback) {
+        //orm.updateOne("burger", "burger_name", condition, function (res) {
             callback(res);
         });
     }
