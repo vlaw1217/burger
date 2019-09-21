@@ -1,8 +1,18 @@
 * {
     box-sizing: border-box;
 }
+
 body {
 background-color: orange;
+}
+
+h1{
+    padding: 20px;
+    text-shadow: 2px 2px;
+}
+
+img {
+    border-radius: 8px;
 }
 
 

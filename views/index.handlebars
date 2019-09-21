@@ -6,9 +6,9 @@
     </div>
 </div>
 
-<div class="contianer text-center">
+<div class="contianer">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6 text-center">
             <h3>Available Burgers</h3>
             <ul class="list-group">
                 <!--<form method="POST" action="burger/updateOne" class="button-size">-->
@@ -19,14 +19,9 @@
                 <li class="list-group-item">
                     <h5>{{this.id}}.{{this.burger_name}}
                         <form method="POST" action="burger/updateOne" class="button-size">
-                    <input type="hidden" name="burgerid" value={{this.id}}>
-        <button type="submit" class="btn btn-default">Devour it!</button>
-        </form>
-<!--<form method="POST" action="/burger/updateOne?_method=PUT" class="button-size">
-    <input type="hidden" type="text" name="burger_name" value={{this.id}}><br>
-    <button type="submit" class="btn btn-default">Devour it!</button>
-</form>-->
-        
+                    <input type="hidden" name="burgerid" value={{this.id}}></br>
+        <button type="submit" class="btn btn-danger">Devour it!</button>
+        </form>      
                     </h5>
                 </li>
                 {{/unless}}
@@ -36,7 +31,7 @@
         </div>
 
 
-        <div class="col-md-4 text center">
+        <div class="col-md-6 text center">
             <h3 class="text-muted">Devoured Burgers</h3>
             <ul class="list-group">
                 {{#each burger}}
@@ -54,10 +49,10 @@
             <div class="col-md-12 text-center">
                 <form class="create-update-form" action="burger/insertOne" method="POST">
                     <div class="form-group">
-                        <!-- <label for="bg">Burger Name:</label> -->
+                        <br>
                         <h5 class="text-center">Enter a burger here then click submit</h5>
                         <textarea type="text" name="burger_name"></textarea><br>
-                        <button class="btn btn-info" type="submit">Submit</button>
+                        <button class="btn btn-dark" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
