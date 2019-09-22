@@ -11,6 +11,7 @@ let burger = {
     insertOne: function (cols, vals, callback) {
         orm.insertOne("burger", cols, vals, function (res) {
             callback(res);
+           
         });
     },
 

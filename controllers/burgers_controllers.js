@@ -25,6 +25,7 @@ router.post("/burger/insertOne", function (req, res) {
             req.body.burger_name
     ],
         function (result) {
+            //res.render("index", handlebarsObj);
             res.json({id: result.insertId });
             
     });
@@ -44,7 +45,7 @@ router.post("/burger/updateOne", function (req, res) {
     ],
         function (result) {
             res.json({ id: result.insertId });
-
+            //res.render("index", handlebarsObj);
         });
 
 });

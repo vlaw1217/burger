@@ -11,7 +11,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+//app.use(express.json());
+app.use(function (req, res, next) {
+    console.log('Time:', Date.now())
+    next()
+})
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");

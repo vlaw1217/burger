@@ -1,38 +1,52 @@
 <!-- Header image and title-->
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron">
     <div class="container text-center">
         <img src="../assets/img/catNburger.jpg" alt="Cat Burger" style="width: 200px; height:200px;">
         <h1> Eat da Burgers </h1>
     </div>
 </div>
 
+<div class="conatiner">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <form class="create-update-form" action="burger/insertOne" method="POST">
+                <div class="form-group">
+                    <br>
+                    <h5 class="text-center">Enter a burger here then click submit</h5>
+                    <textarea type="text" name="burger_name"></textarea><br>
+                    <button class="btn btn-dark" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
 <div class="contianer">
     <div class="row">
-        <div class="col-md-6 text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-3 text-center">
             <h3>Available Burgers</h3>
             <ul class="list-group">
-                <!--<form method="POST" action="burger/updateOne" class="button-size">-->
-               
                 {{#each burger}}
                 {{#unless this.devoured}}
-               
                 <li class="list-group-item">
                     <h5>{{this.id}}.{{this.burger_name}}
                         <form method="POST" action="burger/updateOne" class="button-size">
-                    <input type="hidden" name="burgerid" value={{this.id}}></br>
-        <button type="submit" class="btn btn-danger">Devour it!</button>
-        </form>      
+                            <input type="hidden" name="burgerid" value={{this.id}}></br>
+                            <button type="submit" class="btn btn-danger">Devour it!</button>
+                        </form>
                     </h5>
                 </li>
                 {{/unless}}
                 {{/each}}
-               <!-- </form>-->
             </ul>
         </div>
 
 
-        <div class="col-md-6 text center">
-            <h3 class="text-muted">Devoured Burgers</h3>
+        <div class="col-md-3 text-center">
+            <h3>Devoured Burgers</h3>
             <ul class="list-group">
                 {{#each burger}}
                 {{#if this.devoured}}
@@ -42,22 +56,8 @@
                 </form>
             </ul>
         </div>
+        <div class="col-md-3">
+        </div>
     </div>
-
-<div class="conatiner">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <form class="create-update-form" action="burger/insertOne" method="POST">
-                    <div class="form-group">
-                        <br>
-                        <h5 class="text-center">Enter a burger here then click submit</h5>
-                        <textarea type="text" name="burger_name"></textarea><br>
-                        <button class="btn btn-dark" type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div><!-- end fourth row -->
-
-        <!-- end bootstrap container -->
-    </div>
+</div>
 
